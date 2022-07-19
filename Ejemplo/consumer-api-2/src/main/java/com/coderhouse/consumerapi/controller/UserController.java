@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.logging.Logger;
+
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -17,6 +19,7 @@ public class UserController {
 
     @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     public ResponseEntity<?> getUsers() {
+        System.out.println("Se ejecuta Dentro del método");
         return ResponseEntity.ok(service.getUsuarios());
     }
 }
